@@ -1,0 +1,8 @@
+<div class="container" *ngIf="!isLoggedIn()">
+    <h2>Please log in to continue</h2>
+    <a class="nav-item nav-link active" routerLink="login">Log in<span class=" sr-only ">(current)</span></a>
+</div> 
+<div class="container" *ngIf="isLoggedIn()">
+    <h2>Welcome to Travlr Getaways!</h2>
+    <a class="nav-item nav-link active" routerLink="list-trips">Explore Trips!<span class=" sr-only ">(current)</span></a>
+</div>

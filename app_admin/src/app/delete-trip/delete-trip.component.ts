@@ -48,16 +48,16 @@ export class DeleteTripComponent implements OnInit {
       let tripCode = localStorage.getItem("tripCode");
       if (!tripCode) {
         alert("Something wrong, couldn't find where I stashed tripCode!");
-        this.router.navigate(['']);
+        this.router.navigate(['list-trips']);
         return;
       }
       console.log('DeleteTripComponent#onInit found tripCode ' + tripCode);
       this.tripService.deleteTrip(tripCode)
       .then(data => {
         console.log(data);
-        // this.router.navigate(['']); Not sure why this isn't working correctly, putting it below for now
+        this.router.navigate(['list-trips']); // Not sure why this isn't working correctly, putting it below for now
       })
-      this.router.navigate(['']);
+      // this.router.navigate(['list-trips']);
     }
   }
 }
